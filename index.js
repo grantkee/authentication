@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 //define routes
 app.use('/users', usersRouter);
-app.use('auth', authenticationRouter);
+// app.use('/auth', authenticationRouter);
 
 app.get('/', (req, res) => {
   res.send('connected')

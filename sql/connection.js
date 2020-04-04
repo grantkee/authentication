@@ -8,7 +8,8 @@ class Connection {
       console.log('creating mysql connection...')
       this.pool = mysql.createPool({
         connectionLimit: 100,
-        host: 'remotemysql.com:3306',
+        // host: 'remotemysql.com:3306',
+        host: 'https://37.59.55.185:3306',
         user: process.env.SQL_USER,
         password: process.env.SQL_SECRET,
         database: process.env.SQL_DB
