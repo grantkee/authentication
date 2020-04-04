@@ -1,1 +1,1 @@
-# server-side authentication
+# Server-side Authentication using JWS Tokens
