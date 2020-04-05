@@ -15,11 +15,6 @@ class Connection {
         database: process.env.SQL_DB,
         port: process.env.SQL_PORT
       })
-      console.log('host:', process.env.SQL_HOST);
-      console.log('user:', process.env.SQL_USER);
-      console.log('pword:', process.env.SQL_SECRET);
-      console.log('db:', process.env.SQL_DB);
-      console.log('port:', process.env.SQL_PORT);
       return this.pool
     }
     return this.pool
