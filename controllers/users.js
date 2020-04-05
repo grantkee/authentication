@@ -37,7 +37,7 @@ const updateUserById = (req, res) => {
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
-    return res.status(204).json({ message: `updated user: ${firstName} ${lastName}` })
+    return res.status(204).send(`updated user: ${firstName} ${lastName}` );
   })
 }
 
@@ -47,7 +47,7 @@ const deleteUserById = (req, res) => {
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
-    return res.json({ message: `Deleted ${results.affectedRows} user(s)` })
+    return res.json({ message: `Deleted ${results.affectedRows} user(s)` });
   })
 }
 
