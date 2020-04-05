@@ -1,22 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const usersRouter = require('./routers/users');
-const authenticationRouter = require('./routers/authentication');
-const logger = require('./middleware');
+const authRouter = require('./routers/authentication');
+const { logger } = require('./middleware');
 
 const app = express();
 const port = process.env.PORT || 3333;
 
 //tools
 app.use(bodyParser.json());
-// app.use(logger);
+app.use(logger);
 
 //define routes
 app.use('/users', usersRouter);
-// app.use('/auth', authenticationRouter);
+app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
-  res.send('connected')
+  res.send('connected - please visit /auth/login or /auth/signup to get started')
 });
 
 app.listen(port, () => {
